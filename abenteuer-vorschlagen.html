@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abenteuer vorschlagen | Abenteuer verbindet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Neues Abenteuer vorschlagen</h1>
+    <p>Hier kannst du deine Idee für ein gemeinsames Draußen-Erlebnis einreichen!</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="community.html">Community-Abenteuer</a>
+    <a href="mitmachen.html">Mitmachen</a>
+    <a href="ueber-uns.html">Über uns</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Dein Vorschlag für die Community</h2>
+      <form class="suggest-form" action="#" method="post">
+        <label for="titel"><strong>Titel des Abenteuers*</strong></label><br />
+        <input type="text" id="titel" name="titel" required><br/><br/>
+
+        <label for="beschreibung"><strong>Kurzbeschreibung*</strong></label><br />
+        <textarea id="beschreibung" name="beschreibung" rows="4" required placeholder="Was plant ihr? Was macht das Erlebnis besonders?"></textarea><br/><br/>
+
+        <label for="startort"><strong>Startort*</strong></label><br />
+        <input type="text" id="startort" name="startort" required placeholder="z.B. Stadtpark West, Eingang Blumenstraße"><br/><br/>
+
+        <label for="zeitpunkt"><strong>Datum & Uhrzeit*</strong></label><br />
+        <input type="datetime-local" id="zeitpunkt" name="zeitpunkt" required><br/><br/>
+
+        <label for="organisator"><strong>Dein Name (Organisator*in)*</strong></label><br />
+        <input type="text" id="organisator" name="organisator" required placeholder="Vorname (oder Nutzername)"><br/><br/>
+
+        <label for="kontakt"><strong>Kontaktmöglichkeit</strong></label><br />
+        <input type="email" id="kontakt" name="kontakt" placeholder="(Optional) E-Mail für Rückfragen"><br/><br/>
+
+        <button type="submit" class="main-cta-button">Abenteuer absenden</button>
+      </form>
+      <p style="margin-top:1.5em; color:gray; font-size:0.95em;">
+        *Pflichtfelder<br>
+        Dein Vorschlag erscheint nach einer kurzen Prüfung in der Liste der Community-Abenteuer.
+      </p>
+      <a class="back-link" href="community.html">&larr; Zurück zu den Community-Abenteuern</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Abenteuer verbindet – Gemeinsam draußen sein</p>
+  </footer>
+</body>
+</html>
