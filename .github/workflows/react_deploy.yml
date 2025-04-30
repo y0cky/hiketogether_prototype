@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or 'master'
+      - main  # oder 'master', je nach Repo
 
 permissions:
   contents: write
@@ -21,14 +21,21 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Clean install ohne native Rollup
+        run: |
+          cd vite-project
+          rm -rf node_modules package-lock.json
+          npm install --legacy-peer-deps
 
-      - name: Build Project
-        run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Build project
+        run: |
+          cd vite-project
+          npm run build
+
+      - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: vite-project/dist
+
