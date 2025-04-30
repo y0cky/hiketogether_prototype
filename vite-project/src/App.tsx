@@ -1,16 +1,14 @@
-import { useState } from 'react'
-import Header from './Header'
-import TourSection from './TourSection'
-import './App.css'
+import { Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Mitmachen from "./pages/Mitmachen"
 
 function App() {
-
   return (
-    <div>
-      <Header />
-      <TourSection />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/mitmachen" element={<Mitmachen />} />
+    </Routes>
   );
 }
 
-export default App
+export default App;
