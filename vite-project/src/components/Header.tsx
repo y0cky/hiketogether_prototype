@@ -2,24 +2,34 @@ import { Link } from 'react-router-dom'
 import { ShoppingCart, User } from 'lucide-react'
 import { motion } from "framer-motion"
 
-function Header() {
+type Props = {
+  isUrban: boolean
+}
+
+export default function Header({ isUrban }: Props) {
+
+  const backgroundUrl = isUrban
+
+    ? `${import.meta.env.BASE_URL}urban_header.avif`
+    : `${import.meta.env.BASE_URL}background.avif`
+
   return (
     <header
       className="relative h-[400px] bg-cover bg-center"
-      style={{ backgroundImage: `url('/background.avif')` }}
+      style={{ backgroundImage: `url('${backgroundUrl}')` }}
     >
       {/* Logo oben links */}
       <Link to="/" className="absolute top-4 left-4 z-20">
-        <img src="/logo.png" alt="Hike Together Logo" className="h-16 w-auto" />
+        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Hike Together Logo" className="h-18 w-auto" />
       </Link>
 
       {/* Login & Warenkorb oben rechts */}
       <div className="absolute top-4 right-4 flex items-center space-x-5 text-white z-20">
         <Link to="/login" className="hover:text-green-300 transition">
-          <User className="w-6 h-6" />
+          <User className="w-7 h-7" />
         </Link>
         <Link to="/warenkorb" className="hover:text-green-300 transition">
-          <ShoppingCart className="w-6 h-6" />
+          <ShoppingCart className="w-7 h-7" />
         </Link>
       </div>
 
@@ -42,8 +52,11 @@ function Header() {
       </div>
 
       {/* Navigationsleiste unten */}
-<nav className="absolute bottom-0 w-full bg-green-700/90 backdrop-blur-md text-white shadow-md z-30">
-  <div className="max-w-7xl mx-auto flex justify-center md:justify-center space-x-6 px-4 py-3 text-sm font-medium tracking-wide">
+      <nav
+  className={`absolute bottom-0 w-full backdrop-blur-md text-white shadow-md z-30 ${
+    isUrban ? "bg-orange-800" : "bg-green-800"
+  }`}
+>  <div className="max-w-7xl mx-auto flex justify-center md:justify-center space-x-6 px-4 py-3 text-sm font-medium tracking-wide">
     <Link to="/" className="hover:text-green-200 transition-colors duration-200">Start</Link>
     <Link to="/touren" className="hover:text-green-200 transition-colors duration-200">Touren</Link>
     <Link to="/mitmachen" className="hover:text-green-200 transition-colors duration-200">Mitmachen</Link>
@@ -52,5 +65,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header

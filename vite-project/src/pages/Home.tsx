@@ -5,12 +5,17 @@ import '../styles/index.css'
 import '../styles/App.css'
 
 
-export default function Home() {
+type Props = {
+  isUrban: boolean
+  setIsUrban: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function Home({ isUrban, setIsUrban }: Props) {
   return (
     <>
-      <Infobar />
-      <Header />
-      <TourSection />
+      <Infobar isUrban={isUrban}/>
+      <Header isUrban={isUrban} />
+      <TourSection isUrban={isUrban} setIsUrban={setIsUrban} />
     </>
-  );
+  )
 }

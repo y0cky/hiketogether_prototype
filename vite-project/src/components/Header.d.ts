@@ -1,2 +1,5 @@
-declare function Header(): import("react/jsx-runtime").JSX.Element;
-export default Header;
+type Props = {
+    isUrban: boolean;
+};
+export default function Header({ isUrban }: Props): import("react/jsx-runtime").JSX.Element;
+export {};

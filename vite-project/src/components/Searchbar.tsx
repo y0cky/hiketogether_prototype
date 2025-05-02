@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { touren } from "./TourSection";
+import { natur_touren, urban_touren } from "./TourSection";
 
-function Searchbar() {
-  const [query, setQuery] = useState("");
+type Props = {
+  isUrban: boolean
+}
+function Searchbar({ isUrban }: Props) {
+  const [query, setQuery] = useState("")
 
-  const filtered = touren.filter((touren) =>
-    touren.titel.toLowerCase().includes(query.toLowerCase())
-  );
+  const touren = isUrban ? urban_touren : natur_touren
+
+  const filtered = touren.filter((tour) =>
+    tour.titel.toLowerCase().includes(query.toLowerCase())
+  )
 
   return (
     <div className="max-w-2xl mx-auto p-4">

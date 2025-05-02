@@ -1,4 +1,4 @@
-export declare const touren: {
+export declare const natur_touren: {
     id: number;
     titel: string;
     bildStill: string;
@@ -6,5 +6,17 @@ export declare const touren: {
     preis: string;
     gruppenanzahl: string;
 }[];
-declare function TourenSection(): import("react/jsx-runtime").JSX.Element;
+export declare const urban_touren: {
+    id: number;
+    titel: string;
+    bildStill: string;
+    bildAnimation: string;
+    preis: string;
+    gruppenanzahl: string;
+}[];
+type Props = {
+    isUrban: boolean;
+    setIsUrban: React.Dispatch<React.SetStateAction<boolean>>;
+};
+declare function TourenSection({ isUrban, setIsUrban }: Props): import("react/jsx-runtime").JSX.Element;
 export default TourenSection;
