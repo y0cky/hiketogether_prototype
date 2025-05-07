@@ -14,7 +14,7 @@ export const natur_touren = [
   {
     id: 2,
     titel: "Felsenpfade & Fernblicke",
-    bildStill: `${import.meta.env.BASE_URL}felsenpfade0.jpg`,
+    bildStill: `${import.meta.env.BASE_URL}felsenpfade.PNG`,
     bildAnimation: `${import.meta.env.BASE_URL}felsenpfade.gif`,
     preis: "22€",
     gruppenanzahl: "Gruppenanzahl: 10",
