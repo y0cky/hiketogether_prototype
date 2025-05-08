@@ -30,7 +30,7 @@ export const natur_touren = [
   {
     id: 4,
     titel: "Wald & Wein: Genusswandern bei Bad Dürkheim",
-    bildStill: `${import.meta.env.BASE_URL}images/burgen_still.jpg`,
+    bildStill: `${import.meta.env.BASE_URL}waldundweinbaddurkheim.jpg`,
     bildAnimation: `${import.meta.env.BASE_URL}images/burgen_animated.gif`,
     gruppenanzahl: "Gruppenanzahl: 10",
     preis: "25€",
@@ -38,7 +38,7 @@ export const natur_touren = [
   {
     id: 5,
     titel: "Donnersberg-Expedition",
-    bildStill: `${import.meta.env.BASE_URL}images/burgen_still.jpg`,
+    bildStill: `${import.meta.env.BASE_URL}donnersberg.jpg`,
     bildAnimation: `${import.meta.env.BASE_URL}images/burgen_animated.gif`,
     gruppenanzahl: "Gruppenanzahl: 12",
     preis: "18€",
@@ -46,7 +46,7 @@ export const natur_touren = [
   {
     id: 6,
     titel: "Heidelberg bei Vollmond",
-    bildStill: `${import.meta.env.BASE_URL}images/burgen_still.jpg`,
+    bildStill: `${import.meta.env.BASE_URL}VollmondHeidelberg.webp`,
     bildAnimation: `${import.meta.env.BASE_URL}images/burgen_animated.gif`,
     gruppenanzahl: "Gruppenanzahl: 14",
     preis: "20€",
